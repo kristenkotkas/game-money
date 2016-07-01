@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">GameMoney</string>
+    <string name="moneysign">moneysign</string>
+    <string name="title_activity_payment">Payment</string>
+</resources>
