@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="rural.gamemoney.GameMaker" android:id="@+id/gameMakerRelLay" android:background="#E6E6E5">
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="new user"
+            android:id="@+id/makeNewUser"
+            android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"/>
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/makerScrollView" android:layout_centerHorizontal="true"
+            android:layout_above="@+id/makeNewUser" android:layout_marginBottom="20dp"
+            android:foregroundGravity="center_horizontal">
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/makerTable">
+        </TableLayout>
+    </ScrollView>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="remove"
+            android:id="@+id/removeUserField" android:layout_below="@+id/makerScrollView"
+            android:layout_alignParentStart="true"/>
+</RelativeLayout>

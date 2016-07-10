@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="rural.gamemoney">
 
     <application
@@ -19,12 +20,44 @@
             </intent-filter>
         </activity>
         <activity
-                android:theme="@style/AppTheme"
                 android:name=".Payment"
+                android:label="@string/title_activity_payment"
                 android:screenOrientation="portrait"
-                android:label="@string/title_activity_payment">
+                android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="rural.gamemoney.Payment"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".QrActivity"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="rural.gamemoney.QrActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".StartActivity"
+                android:label="Start"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="rural.gamemoney.StartActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.journeyapps.barcodescanner.CaptureActivity"
+                android:screenOrientation="fullSensor"
+                tools:replace="screenOrientation"/>
+        <activity android:name=".GameMaker">
+            <intent-filter>
+                <action android:name="rural.gamemoney.GameMaker"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
