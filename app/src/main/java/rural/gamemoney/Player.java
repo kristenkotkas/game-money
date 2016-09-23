@@ -1,31 +1,26 @@
 package rural.gamemoney;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
-    private String userName;
-    private int moneyGiven;
-    private int moneyReceived;
+    private static String userName;
+    public static List<String> usersList = new ArrayList<>();
+    private static String gamer;
 
-    public Player(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserName() {
+    public static String getUserName() {
         return userName;
     }
 
-    public int getMoneyGiven() {
-        return moneyGiven;
+    public static void setUserName(String userName) {
+        Player.userName = userName;
     }
 
-    public void setMoneyGiven(int moneyGiven) {
-        this.moneyGiven = moneyGiven;
+    public static String getGamer() {
+        return gamer;
     }
 
-    public int getMoneyReceived() {
-        return moneyReceived;
-    }
-
-    public void setMoneyReceived(int moneyReceived) {
-        this.moneyReceived = moneyReceived;
+    public static void setGamer(String gamer) {
+        Player.gamer = gamer;
     }
 }

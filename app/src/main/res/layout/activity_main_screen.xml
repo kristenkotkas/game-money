@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        style="@style/AppTheme"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context=".MainScreenActivity" android:id="@+id/relLay">
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:contentDescription="@string/moneysign" android:src="@mipmap/moneysign"
+            android:baselineAlignBottom="false" android:cropToPadding="false"
+            android:scaleType="fitCenter" android:layout_below="@+id/tvtransferHello" android:layout_alignParentStart="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/moneyCurrent"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/MainScroll" android:layout_alignTop="@+id/imageView"/>
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/MainScroll"
+            android:layout_below="@+id/imageView" android:layout_alignParentStart="true"
+            android:layout_above="@+id/btnPayment" android:layout_marginBottom="20dp">
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/MainScrollTable"
+        >
+        </TableLayout>
+    </ScrollView>
+    <Button
+            android:background="@drawable/roundbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="transfer"
+            android:id="@+id/btnPayment"
+            android:layout_alignParentBottom="true" android:layout_alignParentStart="true"/>
+    <Button
+            android:background="@drawable/roundbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="players"
+            android:id="@+id/tostatmanu"
+            android:layout_alignParentBottom="true" android:layout_alignEnd="@+id/MainScroll"/>
+    <rural.gamemoney.view.HeaderText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvtransferHello" android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" android:layout_marginLeft="20dp"
+    />
+</RelativeLayout>

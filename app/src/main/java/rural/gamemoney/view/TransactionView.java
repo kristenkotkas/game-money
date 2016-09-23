@@ -1,4 +1,4 @@
-package rural.gamemoney;
+package rural.gamemoney.view;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import rural.gamemoney.MainActivity;
 
 public class TransactionView extends View {
     private boolean isIncome;

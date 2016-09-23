@@ -1,4 +1,4 @@
-package rural.gamemoney;
+package rural.gamemoney.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -17,6 +17,9 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                     TableData.TableInfo.COL_ISINCOME + " TEXT," +
                     TableData.TableInfo.COL_USERNAME + " TEXT," +
                     TableData.TableInfo.COL_MONEY_CURRENT + " INTEGER);";
+    private String createQuery2 =
+            "CREATE TABLE " + TableData.TableInfo.TABLE_NAME_DATA + "(" +
+                    TableData.TableInfo.COL_USER + " TEXT);";
 
     public DatabaseOperations(Context context) {
         super(context, TableData.TableInfo.DATABASE_NAME, null, databaseVersion);
@@ -26,6 +29,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createQuery);
+        db.execSQL(createQuery2);
     }
 
     @Override
@@ -33,7 +37,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
 
     }
 
-    void putInformation(DatabaseOperations dop, int id, int amount, boolean isInocme, String userName, int moneyCurrent) {
+    public void putInformation(DatabaseOperations dop, int id, int amount, boolean isInocme, String userName, int moneyCurrent) {
         SQLiteDatabase SQ = dop.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(TableData.TableInfo.COL_TRANS_ID, id);
@@ -45,7 +49,7 @@ public class DatabaseOperations extends SQLiteOpenHelper {
         Log.d("Database operations", "One row inserted");
     }
 
-    Cursor getInformation(DatabaseOperations dop) {
+    public Cursor getInformation(DatabaseOperations dop) {
         SQLiteDatabase SQ = dop.getReadableDatabase();
         String[] columns = {
                 TableData.TableInfo.COL_TRANS_ID,
@@ -54,5 +58,19 @@ public class DatabaseOperations extends SQLiteOpenHelper {
                 TableData.TableInfo.COL_USERNAME,
                 TableData.TableInfo.COL_MONEY_CURRENT};
         return SQ.query(TableData.TableInfo.TABLE_NAME, columns, null, null, null, null, null);
+    }
+
+    public void putUsers(DatabaseOperations dop, String user) {
+        SQLiteDatabase SQ = dop.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(TableData.TableInfo.COL_USER, user);
+        SQ.insert(TableData.TableInfo.TABLE_NAME_DATA, null, cv);
+        Log.d("DOP", "User " + user +  " inserted");
+    }
+
+    public Cursor getUsers(DatabaseOperations dop) {
+        SQLiteDatabase SQ = dop.getReadableDatabase();
+        String[] columns = {TableData.TableInfo.COL_USER};
+        return SQ.query(TableData.TableInfo.TABLE_NAME_DATA, columns, null, null, null, null, null);
     }
 }

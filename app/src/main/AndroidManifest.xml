@@ -20,6 +20,17 @@
             </intent-filter>
         </activity>
         <activity
+                android:name=".MainScreenActivity"
+                android:label="mainscreen"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="rural.gamemoney.MainScreenActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
                 android:name=".Payment"
                 android:label="@string/title_activity_payment"
                 android:screenOrientation="portrait"
@@ -41,23 +52,43 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".StartActivity"
-                android:label="Start"
-                android:screenOrientation="portrait"
-                android:theme="@style/AppTheme">
+                android:name="com.journeyapps.barcodescanner.CaptureActivity"
+                android:screenOrientation="fullSensor"
+                tools:replace="screenOrientation"/>
+        <activity
+                android:name=".GameMakerBanker"
+                android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="rural.gamemoney.StartActivity"/>
+                <action android:name="rural.gamemoney.GameMakerBanker"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity
-                android:name="com.journeyapps.barcodescanner.CaptureActivity"
-                android:screenOrientation="fullSensor"
-                tools:replace="screenOrientation"/>
-        <activity android:name=".GameMaker">
+                android:name=".StatsActivity"
+                android:label="Statistic"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="rural.gamemoney.GameMaker"/>
+                <action android:name="rural.gamemoney.StatsActivity"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+                android:name=".GameMakerPlayer"
+                android:label="Gamemaker"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="rural.gamemoney.GameMakerPlayer"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".AnimDemoActivity">
+            <intent-filter>
+                <action android:name="rural.gamemoney.animDemoActivity"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>

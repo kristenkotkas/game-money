@@ -1,9 +1,10 @@
-package rural.gamemoney;
+package rural.gamemoney.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
+import rural.gamemoney.Payment;
 
 public class PaymentButton extends Button {
 
@@ -25,7 +26,7 @@ public class PaymentButton extends Button {
         initListener();
     }
 
-    void setCurrentActivity(Payment act) {
+    public void setCurrentActivity(Payment act) {
         this.currentActivity = act;
     }
 

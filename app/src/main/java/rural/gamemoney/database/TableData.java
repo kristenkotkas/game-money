@@ -1,4 +1,4 @@
-package rural.gamemoney;
+package rural.gamemoney.database;
 
 import android.provider.BaseColumns;
 
@@ -15,5 +15,7 @@ public class TableData {
         public static final String COL_MONEY_CURRENT = "CorrentMoney";
         public static final String DATABASE_NAME = "GameMoneyDB";
         public static final String TABLE_NAME = "GameMoneyTable";
+        public static final String TABLE_NAME_DATA = "DataTable";
+        public static final String COL_USER = "User";
     }
 }
